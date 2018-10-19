@@ -56,5 +56,8 @@
  ;; If there is more than one, they won't work right.
  )
 
+;; Disable the ugly visual bell
+(setq ring-bell-function 'ignore)
+
 ;; Load wanted theme
 (load-theme 'zenburn t)
