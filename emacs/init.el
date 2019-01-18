@@ -19,9 +19,21 @@
 (when window-system (set-frame-size (selected-frame) 180 70))
 
 ;; Fix mac keyboard meta modifier
-(setq mac-option-modifier 'meta
-      mac-command-modifier nil
-      x-select-enable-clipboard t)
+;(setq mac-option-modifier 'meta
+;      mac-command-modifier nil
+;      x-select-enable-clipboard t)
+
+;(setq ns-option-modifier      'meta
+;      ns-right-option-modifer 'control)
+
+; Projectile - nice tools for finding files in projects etc
+
+(projectile-mode +1)
+(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+
+(setq ns-alternate-modifier 'meta)
+(setq ns-right-alternate-modifier 'none)
 
 ;; Use sensible defaults
 (load-file "~/dev/emacs-settings/sensible-defaults.el/sensible-defaults.el")
