@@ -44,6 +44,7 @@
 ;; Remove tool bars and other fluff
 (tool-bar-mode 0)
 (menu-bar-mode 0)
+(global-display-line-numbers-mode t)
 (scroll-bar-mode -1)
 (set-window-scroll-bars (minibuffer-window) nil nil)
 (setq frame-title-format '((:eval (projectile-project-name))))
