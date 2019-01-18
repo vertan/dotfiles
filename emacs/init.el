@@ -15,6 +15,9 @@
     (add-to-list 'package-archives (cons "gnu" (concat proto "://elpa.gnu.org/packages/")))))
 (package-initialize)
 
+;; Window size on startup
+(when window-system (set-frame-size (selected-frame) 180 70))
+
 ;; Fix mac keyboard meta modifier
 (setq mac-option-modifier 'meta
       mac-command-modifier nil
