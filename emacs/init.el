@@ -49,6 +49,9 @@
 (set-window-scroll-bars (minibuffer-window) nil nil)
 (setq frame-title-format '((:eval (projectile-project-name))))
 
+;; Show git line diff in margin
+(global-git-gutter-mode +1)
+
 ;; Highlight current line
 (global-hl-line-mode)
 
@@ -64,7 +67,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (go-mode zenburn-theme))))
+ '(package-selected-packages
+   (quote
+    (projectile git-gutter magit yaml-mode go-mode zenburn-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
