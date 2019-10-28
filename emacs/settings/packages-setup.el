@@ -5,6 +5,6 @@
                   gnutls-verify-error t)
 ;;(add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packages/")) t)
 
-(package-initialize)
+;;(package-initialize)
 
 (provide 'packages-setup)

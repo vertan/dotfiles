@@ -14,7 +14,7 @@
 (require 'theme-settings)
 
 ;; Window size on startup
-(when window-system (set-frame-size (selected-frame) 180 60))
+(when window-system (set-frame-size (selected-frame) 180 55))
 
 (setq inhibit-splash-screen t)
 (setq inhibit-startup-message t)
@@ -39,7 +39,7 @@
 ;; Set default font
 (set-face-attribute 'default nil
                     :family "Source Code Pro"
-                    :height 95
+                    :height 100
                     :weight 'normal
                     :width 'normal)
 
@@ -71,11 +71,28 @@
 ;; Obey editorconfig
 (editorconfig-mode 1)
 
+(elpy-enable)
+
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)
+
+(smex-initialize)
+(global-set-key (kbd "M-x") 'smex)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(doom-modeline-mode t)
  '(package-selected-packages
-   '(doom-themes neotree go-mode doom-modeline editorconfig git-gutter-fringe zenburn-theme)))
+   '(py-autopep8 smex elpy doom-modeline doom-themes neotree go-mode editorconfig git-gutter-fringe)))
+
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
 
