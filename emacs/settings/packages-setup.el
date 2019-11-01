@@ -7,4 +7,18 @@
 
 ;;(package-initialize)
 
+(require 'use-package-ensure)
+(setq use-package-always-ensure t)
+
+(use-package all-the-icons)
+(use-package doom-modeline)
+(use-package py-autopep8)
+(use-package smex)
+(use-package elpy)
+(use-package doom-themes)
+(use-package neotree)
+(use-package go-mode)
+(use-package editorconfig)
+(use-package git-gutter-fringe)
+
 (provide 'packages-setup)
