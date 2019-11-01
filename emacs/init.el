@@ -49,6 +49,19 @@
 (editorconfig-mode 1)
 
 
+;; pyenv mode to use correct python versions
+(pyenv-mode)
+
+;; This magic checks for .python-version file
+(defun ssbb-pyenv-hook ()
+"Automatically activates pyenv version if .python-version file exists."
+(f-traverse-upwards
+(lambda (path)
+  (let ((pyenv-version-path (f-expand ".python-version" path)))
+		(if (f-exists? pyenv-version-path)
+				(pyenv-mode-set (s-trim (f-read-text pyenv-version-path 'utf-8))))))))
+(add-hook 'find-file-hook 'ssbb-pyenv-hook)
+
 ;; elpy makes python editing smart
 (elpy-enable)
 

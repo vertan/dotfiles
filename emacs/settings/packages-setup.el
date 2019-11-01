@@ -14,6 +14,7 @@
 (use-package doom-modeline)
 (use-package py-autopep8)
 (use-package smex)
+(use-package pyenv-mode)
 (use-package elpy)
 (use-package doom-themes)
 (use-package neotree)
