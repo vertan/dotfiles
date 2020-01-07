@@ -1,6 +1,11 @@
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/") t)
+(package-initialize)
+
 ;; TODO: Load path depending on OS
-(add-to-list 'load-path "c:/Users/Filip/AppData/Roaming/.emacs.d/settings")
-(add-to-list 'load-path "~/.emacs.d/dotfiles/emacs/settings/")
+;(add-to-list 'load-path "c:/Users/Filip/AppData/Roaming/.emacs.d/settings")
+(add-to-list 'load-path "~/dev/dotfiles/emacs/settings/")
 
 (require 'packages-setup)
 (require 'better-defaults)
