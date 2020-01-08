@@ -22,5 +22,6 @@
 (use-package editorconfig)
 (use-package git-gutter-fringe)
 (use-package yaml-mode)
+(use-package markdown-mode)
 
 (provide 'packages-setup)
