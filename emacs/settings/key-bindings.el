@@ -4,4 +4,7 @@
 
 (global-set-key [f8] 'neotree-toggle)
 
+;; Use right option key as ALT instead of Meta
+(setq ns-right-alternate-modifier nil)
+
 (provide 'key-bindings)
