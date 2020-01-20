@@ -7,6 +7,8 @@
 ;(add-to-list 'load-path "c:/Users/Filip/AppData/Roaming/.emacs.d/settings")
 (add-to-list 'load-path "~/dev/dotfiles/emacs/settings/")
 
+(setq elpy-rpc-virtualenv-path 'current)
+
 (require 'packages-setup)
 (require 'better-defaults)
 (require 'sane-defaults)
@@ -53,6 +55,7 @@
 ;; Obey editorconfig
 (editorconfig-mode 1)
 
+(setq js-indent-level 2)
 
 ;; pyenv mode to use correct python versions
 (pyenv-mode)
@@ -78,6 +81,9 @@
 ;; Smex enables ido-mode for meta commands
 (smex-initialize)
 (global-set-key (kbd "M-x") 'smex)
+
+;; stop creating those #auto-save# files
+(setq auto-save-default nil)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
