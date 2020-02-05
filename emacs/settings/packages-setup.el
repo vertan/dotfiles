@@ -23,5 +23,6 @@
 (use-package git-gutter-fringe)
 (use-package yaml-mode)
 (use-package markdown-mode)
+(use-package web-mode)
 
 (provide 'packages-setup)
