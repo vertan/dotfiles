@@ -24,5 +24,6 @@
 (use-package yaml-mode)
 (use-package markdown-mode)
 (use-package web-mode)
+(use-package counsel)
 
 (provide 'packages-setup)
