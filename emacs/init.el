@@ -58,7 +58,20 @@
 (setq js-indent-level 2)
 
 ;; pyenv mode to use correct python versions
-(pyenv-mode)
+(use-package pyenv-mode
+  :init
+  (add-to-list 'exec-path "~/.pyenv/shims")
+  (setenv "WORKON_HOME" "~/.pyenv/versions/")
+  :config
+  (pyenv-mode)
+  :bind
+  ("C-x p e" . pyenv-activate-current-project))
+
+;; Automatically run Black on buffer save
+(add-hook 'elpy-mode-hook
+          '(lambda ()
+             (when (eq major-mode 'python-mode)
+               (add-hook 'before-save-hook 'elpy-black-fix-code))))
 
 ;; This magic checks for .python-version file
 (defun ssbb-pyenv-hook ()
@@ -90,6 +103,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(flymake-gui-warnings-enabled nil)
  '(doom-modeline-mode t)
  '(package-selected-packages
    '(py-autopep8 smex elpy doom-modeline doom-themes neotree go-mode editorconfig git-gutter-fringe)))
