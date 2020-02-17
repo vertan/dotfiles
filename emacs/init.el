@@ -98,6 +98,10 @@
 ;; stop creating those #auto-save# files
 (setq auto-save-default nil)
 
+;; Fix correct shell variables when running as MacOS GUI app
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -116,6 +120,11 @@
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+
+;; Run Prettier on file save for the following modes
+(add-hook 'scss-mode-hook 'prettier-js-mode)
+(add-hook 'js-mode-hook 'prettier-js-mode)
+(add-hook 'yaml-mode-hook 'prettier-js-mode)
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

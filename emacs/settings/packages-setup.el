@@ -25,5 +25,7 @@
 (use-package markdown-mode)
 (use-package web-mode)
 (use-package counsel)
+(use-package prettier-js)
+(use-package exec-path-from-shell)
 
 (provide 'packages-setup)
