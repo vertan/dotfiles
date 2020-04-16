@@ -5,6 +5,11 @@
 (global-set-key [f8] 'neotree-toggle)
 
 ;; Use right option key as ALT instead of Meta
-(setq ns-right-alternate-modifier nil)
+;;(setq ns-right-alternate-modifier nil)
+
+(when (eq system-type 'darwin)
+  (setq mac-right-option-modifier 'none)
+  (setq mac-command-modifier 'meta)
+  (setq mac-option-modifier nil))
 
 (provide 'key-bindings)

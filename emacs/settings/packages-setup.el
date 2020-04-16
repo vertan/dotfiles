@@ -27,5 +27,6 @@
 (use-package counsel)
 (use-package prettier-js)
 (use-package exec-path-from-shell)
+(use-package add-node-modules-path)
 
 (provide 'packages-setup)
