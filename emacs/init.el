@@ -7,8 +7,6 @@
 ;(add-to-list 'load-path "c:/Users/Filip/AppData/Roaming/.emacs.d/settings")
 (add-to-list 'load-path "~/dev/dotfiles/emacs/settings/")
 
-(setq elpy-rpc-virtualenv-path 'current)
-
 (require 'packages-setup)
 (require 'better-defaults)
 (require 'sane-defaults)
@@ -85,6 +83,8 @@
 
 ;; elpy makes python editing smart
 (elpy-enable)
+(setq elpy-rpc-timeout 100)
+(setq elpy-rpc-virtualenv-path 'current)
 
 ;; ido enables fuzzy matching for finding files/folders
 (setq ido-enable-flex-matching t)
